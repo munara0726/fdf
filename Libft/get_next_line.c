@@ -6,11 +6,11 @@
 /*   By: mtoktobo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 14:36:18 by mtoktobo          #+#    #+#             */
-/*   Updated: 2020/01/24 16:00:48 by mtoktobo         ###   ########.fr       */
+/*   Updated: 2020/02/17 19:53:53 by mtoktobo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static char		*ft_join(char **dst, char *src)
 {
@@ -62,12 +62,12 @@ int				get_next_line(const int fd, char **line)
 	return ((len == 0 && *line[0] == '\0' && rem[fd] == NULL) ? 0 : 1);
 }
 
-int main()
-{
-	int fd;
+/*int main()
+//{
+	//int fd;
 	char *line;
 	
 	while(1)
 		;
 	return 0;
-}
+}*/

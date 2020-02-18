@@ -6,7 +6,7 @@
 #    By: mtoktobo <mtoktobo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/18 20:33:14 by mtoktobo          #+#    #+#              #
-#    Updated: 2020/02/06 14:59:07 by mtoktobo         ###   ########.fr        #
+#    Updated: 2020/02/17 20:56:58 by mtoktobo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC_FILES = ft_strlen.c ft_strcpy.c ft_strcmp.c ft_isalpha.c ft_isdigit.c \
 			ft_memalloc.c ft_strmap.c ft_strmapi.c ft_strtrim.c ft_itoa.c \
 			ft_strstr.c ft_strnequ.c ft_lstadd.c ft_lstiter.c ft_check.c \
 			ft_lstnew.c ft_lstdel.c ft_lstdelone.c ft_lstmap.c \
-			ft_lst_at_the_end.c ft_wcount.c
+			ft_lst_at_the_end.c ft_wcount.c get_next_line.c
 
 OBJ = *.o
 

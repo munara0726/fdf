@@ -6,14 +6,14 @@
 /*   By: mtoktobo <mtoktobo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 10:24:52 by mtoktobo          #+#    #+#             */
-/*   Updated: 2020/02/06 18:50:17 by mtoktobo         ###   ########.fr       */
+/*   Updated: 2020/02/17 20:41:17 by mtoktobo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include "Libft/libft.h"
 
-int	ft_height(char *f_name) // get_height
+int		ft_height(char *f_name)// get_height
 {
 	char *line;
 	int fd;
@@ -30,7 +30,7 @@ int	ft_height(char *f_name) // get_height
 	return (height);
 }
 
-int	ft_width(char *f_name) // get_width
+int		ft_width(char *f_name)// get_width
 {
 	int fd;
 	int width;
@@ -38,7 +38,7 @@ int	ft_width(char *f_name) // get_width
 
 	fd = open(f_name, O_RDONLY, 0);
 	get_next_line(fd, &line);
-	width = count_width(line, ' ');
+	width = ft_wcount(line, ' ');
 	free(line);
 	close(fd);
 	return (width);
@@ -65,15 +65,16 @@ void	read_file(char *f_name, fdf *data)
 	int fd;
 	char *line;
 	int i;
-	
-	i = 0;
+
 	data->height = ft_height(f_name);
 	data->width = ft_width(f_name);
-	
 	data->z_matrix = (int**)malloc(sizeof(int*) * (data->height + 1));
+	i = 0;
 	while (i <= data->height)
-	data->z_matrix[i++] = (int*)malloc(sizeof(int) * (data->width + 1));
-	fd = open(f_name, O_RDONLY, O);
+	{
+		data->z_matrix[i++] = (int*)malloc(sizeof(int) * data->width + 1);
+	}
+	fd = open(f_name, O_RDONLY, 0);
 	i = 0;
 	while (get_next_line(fd, &line))
 	{
@@ -83,4 +84,4 @@ void	read_file(char *f_name, fdf *data)
 	}
 	close(fd);
 	data->z_matrix[i] = NULL;
-
+}
